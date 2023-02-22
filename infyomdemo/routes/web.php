@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('costumers', App\Http\Controllers\costumerController::class);
+Route::resource('avions', App\Http\Controllers\AvionController::class);
