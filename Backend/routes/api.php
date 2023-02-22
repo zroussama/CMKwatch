@@ -14,6 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('connections/{id}/connecter', 'App\Http\Controllers\API\ConnexionAPIController@connecter');
+Route::post('connections/{id}/deconnecter', 'App\Http\Controllers\API\ConnexionAPIController@deconnecter');
+Route::post('connections/{id}/generer-file', 'App\Http\Controllers\API\ConnexionAPIController@genererFile');
+
+Route::group(['prefix' => 'api'], function () {
+    Route::get('connections', [App\Http\Controllers\API\ConnectionAPIController::class, 'index']);
+    Route::post('connections', [App\Http\Controllers\API\ConnectionAPIController::class, 'store']);
+    Route::get('connections/{id}', [App\Http\Controllers\API\ConnectionAPIController::class, 'show']);
+    Route::put('connections/{id}', [App\Http\Controllers\API\ConnectionAPIController::class, 'update']);
+    Route::delete('connections/{id}', [App\Http\Controllers\API\ConnectionAPIController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'api'], function () {
+    Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:api');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('voitures', App\Http\Controllers\API\VoitureAPIController::class)
+    ->except(['create', 'edit']);

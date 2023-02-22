@@ -111,7 +111,7 @@ class ConnexionController extends Controller
     {
         $connexion->delete();
     
-        return redirect()->route('connexions.index')
+        return redirect()->route('connections.index')
                         ->with('success','connexion deleted successfully');
 
     }
