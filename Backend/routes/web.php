@@ -52,3 +52,4 @@ Route::get('/admin/articles/{article}/edit',                'Admin\ArticlesContr
 Route::post('/admin/articles/bulk-destroy',                 'Admin\ArticlesController@bulkDestroy')->name('admin/articles/bulk-destroy');
 Route::post('/admin/articles/{article}',                    'Admin\ArticlesController@update')->name('admin/articles/update');
 Route::delete('/admin/articles/{article}',                  'Admin\ArticlesController@destroy')->name('admin/articles/destroy');
+Route::resource('connections', App\Http\Controllers\ConnectionController::class);

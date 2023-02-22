@@ -12,6 +12,7 @@
         "infyomlabs/adminlte-templates": "^5.0",
         "infyomlabs/laravel-generator": "^5.0",
         "infyomlabs/laravel-ui-adminlte": "^5.1",
+        "jeroennoten/laravel-adminlte": "^3.8",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"
