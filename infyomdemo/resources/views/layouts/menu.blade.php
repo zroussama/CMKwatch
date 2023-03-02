@@ -1,14 +1,7 @@
-
+<!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('costumers.index') }}" class="nav-link {{ Request::is('costumers*') ? 'active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Costumers</p>
-    </a>
-</li>
-
-<li class="nav-item">
-    <a href="{{ route('avions.index') }}" class="nav-link {{ Request::is('avions*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-home"></i>
-        <p>Avions</p>
+        <p>Home</p>
     </a>
 </li>

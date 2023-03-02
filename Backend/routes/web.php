@@ -29,5 +29,10 @@ Route::resource('users', UserController::class);
 
 //Route::resource('connexions', ConnexionController::class);
 
-Route::resource('connections', App\Http\Controllers\API\ConnectionAPIController::class);
-Route::resource('voitures', App\Http\Controllers\VoitureController::class);
+// Route::resource('connections', App\Http\Controllers\API\ConnectionAPIController::class);
+// Route::resource('voitures', App\Http\Controllers\VoitureController::class);
+// Route::resource('connections', App\Http\Controllers\ConnectionController::class);
+// Route::resource('fiches', App\Http\Controllers\FicheController::class);
+// Route::resource('personnes', App\Http\Controllers\personneController::class);
+// Route::resource('portfolios', App\Http\Controllers\portfolioController::class);
+// Route::resource('c-m-k-s', App\Http\Controllers\CMKController::class);

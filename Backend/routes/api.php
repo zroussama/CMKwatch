@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\CMKResource;
+use App\Models\CMK;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::post('connections/{id}/connecter', 'App\Http\Controllers\API\ConnexionAPIController@connecter');
 Route::post('connections/{id}/deconnecter', 'App\Http\Controllers\API\ConnexionAPIController@deconnecter');
 Route::post('connections/{id}/generer-file', 'App\Http\Controllers\API\ConnexionAPIController@genererFile');
@@ -29,6 +32,7 @@ Route::group(['prefix' => 'api'], function () {
 Route::group(['prefix' => 'api'], function () {
     Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:api');
 });
+*/
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -37,3 +41,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('voitures', App\Http\Controllers\API\VoitureAPIController::class)
     ->except(['create', 'edit']);
+
+Route::resource('fiches', App\Http\Controllers\API\FicheAPIController::class);
+    
+
+Route::resource('personnes', App\Http\Controllers\API\personneAPIController::class);
+   
+
+Route::resource('portfolios', App\Http\Controllers\API\portfolioAPIController::class);
+
+
+Route::resource('cmk', App\Http\Controllers\API\CMKAPIController::class);
+
+Route::get('/Code', function(){
+    return CMKResource::collection(CMK::all());
+});
+
+Route::get('/code/{id}', function($id){
+    return new CMKResource(CMK::findOrFail($id));
+});

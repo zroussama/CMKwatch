@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::resource('costumers', App\Http\Controllers\costumerController::class);
 Route::resource('avions', App\Http\Controllers\AvionController::class);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();

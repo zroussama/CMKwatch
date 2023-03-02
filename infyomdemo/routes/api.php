@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('costumers', App\Http\Controllers\API\costumerAPIController::class);
-  //  ->except(['create', 'edit']);   
+Route::resource('costumers', App\Http\Controllers\API\costumerAPIController::class)
+  ->except(['create', 'edit']);   
   //Postman affiche erreur 500 pour post avec fichier JSON
 
   /* JSON FILE
